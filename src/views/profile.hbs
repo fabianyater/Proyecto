@@ -1,0 +1,63 @@
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Widget: user widget style 1 -->
+            <div class="box box-widget widget-user">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header" style="background: #074558;">
+                </div>
+                <div class="widget-user-image">
+                    <img class="img-circle"
+                        src="https://demo.bloguero-ec.com/login-mvc-php-mysql-ajax/view/bootstrap-default/img/user.png"
+                        alt="User Avatar">
+                </div>
+                <div class="box-footer">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4">
+                            <div class="description-block">
+                                <h5 class="description-header">0</h5>
+                                <span class="description-text">Reservas hechas</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="description-block">
+                                <h5 class="description-header">0</h5>
+                                <span class="description-text">Canchas favoritas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!--footer-->
+            </div>
+            <!-- /.widget-user -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <!-- About Me Box -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Información</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <strong><i class="margin-r-5"></i> General</strong>
+                    <p class="text-muted">{{user.nombres}} {{user.apellidos}}</p>
+                    <p class="text-muted">{{user.numcel}}</p>
+                    <p class="text-muted">{{user.numidentificacion}}</p>
+                    <hr>
+                    <strong><i class="margin-r-5"></i> Contacto</strong>
+                    <p class="text-muted">{{user.correo}}</p>
+                    <hr>
+                    <a href="/edit/{{user.id}}" class="btn btn-secondary">Editar</a>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>

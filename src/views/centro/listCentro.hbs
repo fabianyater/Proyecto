@@ -1,0 +1,19 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each allcentros}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p class="m-2">{{cendeportivo_nombre}}</p>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="row md-4 mx-auto">
+            <div class="text-center">
+                <p style="font-size: 2em;">No hay ningún centro agregado.</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

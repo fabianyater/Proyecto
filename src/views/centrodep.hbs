@@ -1,0 +1,111 @@
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Widget: user widget style 1 -->
+            <div class="box box-widget widget-user">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header" style="background: #074558;">
+                </div>
+                <div class="widget-user-image">
+                    <img class="img-circle"
+                        src="https://demo.bloguero-ec.com/login-mvc-php-mysql-ajax/view/bootstrap-default/img/user.png"
+                        alt="User Avatar">
+                </div>
+                <div class="box-footer">
+                    <!-- /.row -->
+                </div>
+                <!--footer-->
+            </div>
+            <!-- /.widget-user -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <!-- About Me Box -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Información</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <strong><i class="margin-r-5"></i> General</strong>
+                    <div class="row">
+                        {{#each micentro}}
+                            <p class="text-muted">{{cendeportivo_nombre}}</p>
+                            <p class="text-muted">{{cendeportivo_direccion}}</p>
+                            <p class="text-muted">{{cendeportivo_rut}}</p>
+                        {{/each}}
+                    </div>
+                    <hr>
+                    <strong><i class="margin-r-5"></i> Contacto</strong>
+                    {{#each micentro}}
+                    <p class="text-muted">{{cendeportivo_correo}}</p>
+                    <p class="text-muted">{{cendeportivo_tel}}</p>
+                    {{/each}}
+                    <hr>
+                    <a href="" class="btn btn-primary">Editar</a>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-md-4">
+            <!-- About Me Box -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Descripción</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    {{#each micentro}}
+                    <strong><i class="margin-r-5"></i> {{cendeportivo_nombre}}</strong>
+                    <p class="text-muted">{{descripcion}}</p>
+                    {{/each}}
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-md-4">
+            <!-- About Me Box -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Detalles</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <strong><i class="margin-r-5"></i> Servicios</strong>
+                    <p class="text-muted">Aquí van los servicios :v</p>
+                    <p class="text-muted"></p>
+                    <a href="/addServices" class="btn btn-primary">Agregar servicio</a>
+                    <hr>
+                    <strong><i class="margin-r-5"></i> Deportes</strong>
+                    <p class="text-muted"></p>
+                    <p class="text-muted"></p>
+                    <a href="" class="btn btn-primary">Agregar deporte</a>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box box-primary">
+                <div class="box-body">
+                    Aquí van las canchas que pertenecen a este centro deportivo
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row md-4 mx-auto">
+        <div class="text-center">
+            <p style="font-size: 2em;">No tienes ningún centro creado.</p>
+            <a href="/addCentro" class="btn btn-success btn-block">¡Agrega tu centro!</a>
+        </div>
+    </div>
+</div>

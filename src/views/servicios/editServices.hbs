@@ -1,0 +1,23 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/editServices/{{servicio.servicio_id}}" method="POST">
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="servicio_id" placeholder="Id" value="{{servicio.servicio_id}}" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{servicio.nombre}}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block">
+                            Actualizar
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

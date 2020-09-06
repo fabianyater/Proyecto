@@ -1,0 +1,51 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Editar perfil</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{user.id}}" method="POST">
+                        <div class="form-group">
+                            <input type="type" name="nombres" placeholder="Nombres" class="form-control" value="{{user.nombres}}" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="type" name="apellidos" placeholder="Apellidos" class="form-control" value="{{user.apellidos}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="type" name="numcel" placeholder="Número de celular" class="form-control"
+                                value="{{user.numcel}}" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="correo" placeholder="Correo electrónico" class="form-control"
+                                value="{{user.correo}}" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <select class="custom-select">
+                                <option selected>Tipo de documento</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="type" name="numidentificacion" placeholder="Número de identificación"
+                                class="form-control" value="{{user.numidentificacion}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="contra" placeholder="Constraseña" class="form-control"
+                                value="{{user.contra}}">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Actualizar
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <a href="/profile" class="btn btn-danger btn-block">Cancelar</a>
+                        </div>
+                        <!-- <a href="/delete/{{user.id}}" class="btn btn-danger">Eliminar</a> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

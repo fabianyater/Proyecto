@@ -1,0 +1,49 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Agrega tu centro</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/addCentro" method="POST">
+                    <div class="form-group">
+                            <input required type="number" name="cendeportivo_id" placeholder="ID" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input required type="text" name="cendeportivo_nombre" placeholder="Nombre" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input required type="text" name="cendeportivo_direccion" placeholder="Dirección" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input required type="email" name="cendeportivo_correo" placeholder="Correo electrónico" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input required type="text" name="cendeportivo_tel" placeholder="Número telefónico" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input required type="text" name="cendeportivo_rut" placeholder="RUT" class="form-control">
+                        </div>
+                        <!-- <div class="form-group">
+                            <select class="custom-select">
+                                <option selected>Tipo de documento</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        -->
+                        <div class="form-group">
+                            <input required type="text" name="descripcion" placeholder="Descripción"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Agregar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
