@@ -33,16 +33,16 @@
                     <strong><i class="margin-r-5"></i> General</strong>
                     <div class="row">
                         {{#each micentro}}
-                            <p class="text-muted">{{cendeportivo_nombre}}</p>
-                            <p class="text-muted">{{cendeportivo_direccion}}</p>
-                            <p class="text-muted">{{cendeportivo_rut}}</p>
+                        <p class="text-muted">{{nombre}}</p>
+                        <p class="text-muted">{{direccion}}</p>
+                        <p class="text-muted">{{rut}}</p>
                         {{/each}}
                     </div>
                     <hr>
                     <strong><i class="margin-r-5"></i> Contacto</strong>
                     {{#each micentro}}
-                    <p class="text-muted">{{cendeportivo_correo}}</p>
-                    <p class="text-muted">{{cendeportivo_tel}}</p>
+                    <p class="text-muted">{{correo}}</p>
+                    <p class="text-muted">{{tel}}</p>
                     {{/each}}
                     <hr>
                     <a href="" class="btn btn-primary">Editar</a>
@@ -60,7 +60,7 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                     {{#each micentro}}
-                    <strong><i class="margin-r-5"></i> {{cendeportivo_nombre}}</strong>
+                    <strong><i class="margin-r-5"></i> {{nombrec}}</strong>
                     <p class="text-muted">{{descripcion}}</p>
                     {{/each}}
                 </div>
@@ -76,16 +76,21 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+
                     <strong><i class="margin-r-5"></i> Servicios</strong>
-                    <p class="text-muted">Aquí van los servicios :v</p>
+                    {{#each srvs}}
+                    <p class="text-muted">{{nombres}}</p>
                     <p class="text-muted"></p>
+                    {{/each}}
                     <a href="/addServices" class="btn btn-primary">Agregar servicio</a>
                     <hr>
                     <strong><i class="margin-r-5"></i> Deportes</strong>
-                    <p class="text-muted"></p>
-                    <p class="text-muted"></p>
+                    {{#each dtes}}
+                    <p class="text-muted">{{nombre}}</p>
+                    {{/each}}
                     <a href="" class="btn btn-primary">Agregar deporte</a>
                 </div>
+
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->

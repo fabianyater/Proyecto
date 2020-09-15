@@ -16,7 +16,9 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-4">
                             <div class="description-block">
-                                <h5 class="description-header">0</h5>
+                                {{#if perfil_usuario}}
+                                <h5 class="description-header">{{perfil_usuario.stringify}}</h5>
+                                {{/if}}
                                 <span class="description-text">Reservas hechas</span>
                             </div>
                         </div>

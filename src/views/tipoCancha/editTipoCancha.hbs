@@ -3,15 +3,12 @@
         <div class="col-md-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/editDeporte/{{deporte.deporte_id}}" method="POST">
+                    <form action="/editTipoCancha/{{tiposCancha.tcancha_id}}" method="POST">
                     <div class="form-group">
-                        <input type="number" class="form-control" name="servicio_id" placeholder="Id" value="{{deporte.deporte_id}}" autofocus>
+                        <input type="number" class="form-control" name="tcancha_id" placeholder="Id" value="{{tiposCancha.tcancha_id}}" autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{deporte.nombre}}" autofocus>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="estado" placeholder="Estado" value="{{deporte.estado}}">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{tiposCancha.nombre}}">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success btn-block">

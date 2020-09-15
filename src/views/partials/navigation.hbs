@@ -1,8 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">
-      <i class="fas fa-link"></i> ReCancheros
-    </a>
+    <a class="navbar-brand" href="/">ReCancheros</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -16,8 +14,17 @@
         <li class="nav-item">
           <a href="#" class="nav-link">Favoritos</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Canchas</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Canchas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/listCancha">Canchas</a>
+            <a class="dropdown-item" href="/AddCancha">Agregar cancha</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/listTipoCancha">Tipos de cancha</a>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -35,18 +42,6 @@
         <li class="nav-item">
           <a href="#" class="nav-link">Estadísticas</a>
         </li>
-        {{else}}
-        <li class="nav-item">
-          <a class="nav-link" href="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tengo un centro deportivo</a>
-        </li>
-
-        {{/if}}
-      </ul>
-      <ul class="ml-auto navbar-nav navbar-right">
-        {{#if user}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -60,6 +55,12 @@
           </div>
         </li>
         {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tengo un centro deportivo</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/signup">Registrarse</a>
         </li>

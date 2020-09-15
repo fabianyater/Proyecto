@@ -7,10 +7,10 @@ serviciosCtrl.renderAddServicio = (req, res) => {
 };
 
 serviciosCtrl.addServicio = async(req, res) => {
-    const { servicio_id, nombre } = req.body;
+    const { servicio_id, nombres } = req.body;
     const newServicio = {
         servicio_id,
-        nombre
+        nombres
     };
     await pool.query('INSERT INTO servicio set ?', [newServicio]);
     req.flash('success', 'Servicio agregado correctamente');
@@ -25,10 +25,10 @@ serviciosCtrl.renderEditServicio = async(req, res) => {
 
 serviciosCtrl.editServicio = async(req, res) => {
     const { id } = req.params;
-    const { servicio_id, nombre } = req.body;
+    const { servicio_id, nombres } = req.body;
     const newServicio = {
         servicio_id,
-        nombre
+        nombres
     };
     await pool.query('UPDATE servicio SET ? WHERE servicio_id = ?', [newServicio, id]);
     req.flash('success', 'Servicio actualizado correctamente');

@@ -56,6 +56,9 @@ app.use(require('./routes/user'));
 app.use(require('./routes/centro'));
 app.use(require('./routes/servicios'));
 app.use(require('./routes/deportes'));
+app.use(require('./routes/cancha'));
+app.use(require('./routes/tipoCancha'));
+
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));

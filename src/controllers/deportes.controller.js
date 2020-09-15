@@ -15,7 +15,7 @@ deportesCtrl.addDeporte = async(req, res) => {
     };
     await pool.query('INSERT INTO deporte set ?', [newDeporte]);
     req.flash('success', 'Deporte agregado correctamente');
-    res.redirect('/centro');
+    res.redirect('/listDeporte');
 }
 
 deportesCtrl.renderEditDeporte = async(req, res) => {
@@ -34,7 +34,7 @@ deportesCtrl.editDeporte = async(req, res) => {
     };
     await pool.query('UPDATE deporte SET ? WHERE deporte_id = ?', [newDeporte, id]);
     req.flash('success', 'Deporte actualizado correctamente');
-    res.redirect('/centro');
+    res.redirect('/listDeporte');
 }
 
 deportesCtrl.renderDeportes = async(req, res) => {
@@ -46,7 +46,7 @@ deportesCtrl.deleteDeporte = async(req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM deporte WHERE deporte_id = ?', [id]);
     req.flash('success', 'Deporte eliminado correctamente');
-    res.redirect('/centro');
+    res.redirect('/listDeporte');
 };
 
 module.exports = deportesCtrl;

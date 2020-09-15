@@ -1,19 +1,19 @@
 <div class="container p-4">
     <div class="row">
-        {{#each servicios}}
+        {{#each tipoCancha}}
         <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
-                    <p class="m-2">{{nombres}}</p>
-                     <a href="/deleteServices/{{servicio_id}}" class="btn btn-danger">Eliminar</a>
-                    <a href="/editServices/{{servicio_id}}" class="btn btn-secondary">Editar</a>
+                    <p class="m-2">{{nombre}}</p>
+                     <a href="/deleteTipoCancha/{{tcancha_id}}" class="btn btn-danger">Eliminar</a>
+                    <a href="/editTipoCancha/{{tcancha_id}}" class="btn btn-secondary">Editar</a>
                 </div>
             </div>
         </div>
         {{else}}
         <div class="row md-4 mx-auto">
             <div class="text-center">
-                <p style="font-size: 2em;">No tienes ningún servicio agregado.</p>
+                <p style="font-size: 2em;">No tienes ningún tipo de cancha agregado.</p>
             </div>
         </div>
         {{/each}}
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-md-4 mx-auto">
             <div class="text-center">
-                <a href="/addServices" class="btn btn-success btn-block">¡Agrega un servicio!</a>
+                <a href="/addTipoCancha" class="btn btn-success btn-block">¡Agrega un tipo cancha!</a>
             </div>
         </div>
     </div>

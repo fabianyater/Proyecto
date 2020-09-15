@@ -9,7 +9,7 @@ centroCtrl.renderAddCentro = (req, res) => {
 centroCtrl.addCentro = async (req, res) => {
     const {
         centro_id,
-        nombre,
+        nombrec,
         direccion,
         correo,
         tel,
@@ -18,12 +18,13 @@ centroCtrl.addCentro = async (req, res) => {
     } = req.body;
     const newCentro = {
         centro_id,
-        nombre,
+        nombrec,
         direccion,
         correo,
         tel,
         rut,
-        usuario_id: req.user.id
+        descripcion,
+        fk_usuario: req.user.id,
     };
     await pool.query('INSERT INTO centro set ?', [newCentro]);
     req.flash('success', 'Centro agregado correctamente');
@@ -32,11 +33,14 @@ centroCtrl.addCentro = async (req, res) => {
 
 centroCtrl.renderMiCentro = async (req, res) => {
     const micentro = await pool.query('SELECT * FROM centro where fk_usuario = ?', [req.user.id]);
-    res.render('centrodep', { micentro });
+    const dtes = await pool.query('select nombre from deporte')
+    const srvs = await pool.query('select nombres from servicio')
+    console.log(dtes)
+    res.render('centrodep', { micentro, dtes, srvs});
 };
 
 centroCtrl.renderCentros = async (req, res) => {
-    const allcentros = await pool.query('SELECT * FROM centro');
+    const allcentros = await pool.query('SELECT * FROM mostrar_centros');
     res.render('centro/listCentro', { allcentros });
 };
 
