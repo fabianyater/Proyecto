@@ -32,10 +32,9 @@ centroCtrl.addCentro = async (req, res) => {
 };
 
 centroCtrl.renderMiCentro = async (req, res) => {
-    const micentro = await pool.query('SELECT * FROM centro where fk_usuario = ?', [req.user.id]);
-    const dtes = await pool.query('select nombre from deporte')
-    const srvs = await pool.query('select nombres from servicio')
-    console.log(dtes)
+    const micentro = await pool.query('SELECT * FROM centro where fk_usuario= ?', [req.user.id]);
+    const srvs = await pool.query('SELECT nombres FROM servicio s inner join centro_servicio cs on s.servicio_id = cs.servicio_id inner join centro c2 on cs.centro_id = c2.centro_id where fk_usuario = ?', [req.user.id])
+    const dtes = await pool.query('SELECT * FROM deporte d inner join centro_deporte cd on d.deporte_id = cd.deporte_id inner join centro c2 on cd.centro_id = c2.centro_id where fk_usuario = ?', [req.user.id])
     res.render('centrodep', { micentro, dtes, srvs});
 };
 

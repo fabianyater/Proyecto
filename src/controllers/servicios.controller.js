@@ -36,7 +36,7 @@ serviciosCtrl.editServicio = async(req, res) => {
 }
 
 serviciosCtrl.renderServicios = async(req, res) => {
-    const servicios = await pool.query('SELECT * FROM servicio');
+    const servicios = await pool.query('SELECT * FROM servicio s inner join centro_servicio cs on s.servicio_id = cs.servicio_id inner join centro c2 on cs.centro_id = c2.centro_id where fk_usuario = ?', [req.user.id]);
     res.render('servicios/listServices', { servicios });
 }
 

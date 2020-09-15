@@ -1,9 +1,7 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <!-- Widget: user widget style 1 -->
             <div class="box box-widget widget-user">
-                <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="widget-user-header" style="background: #074558;">
                 </div>
                 <div class="widget-user-image">
@@ -12,105 +10,71 @@
                         alt="User Avatar">
                 </div>
                 <div class="box-footer">
-                    <!-- /.row -->
                 </div>
-                <!--footer-->
             </div>
-            <!-- /.widget-user -->
         </div>
-        <!-- /.col -->
     </div>
-    <!-- /.row -->
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <!-- About Me Box -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Información</h3>
+                    <h3>Información</h3>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                     <strong><i class="margin-r-5"></i> General</strong>
-                    <div class="row">
-                        {{#each micentro}}
-                        <p class="text-muted">{{nombre}}</p>
-                        <p class="text-muted">{{direccion}}</p>
-                        <p class="text-muted">{{rut}}</p>
-                        {{/each}}
-                    </div>
-                    <hr>
-                    <strong><i class="margin-r-5"></i> Contacto</strong>
                     {{#each micentro}}
-                    <p class="text-muted">{{correo}}</p>
-                    <p class="text-muted">{{tel}}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="card-text list-group-item">{{nombre}}</li>
+                        <li class="card-text list-group-item">{{direccion}}</li>
+                        <li class="card-text list-group-item">{{rut}}</li>
+                        <li class="card-text list-group-item">{{correo}}</li>
+                        <li class="card-text list-group-item">{{tel}}</li>
+                    </ul>
                     {{/each}}
+                    <hr>
+                    <strong><i class="margin-r-5"></i> Descripción</strong>
+                    <div>
+                        {{descripcion}}
+                    </div>
                     <hr>
                     <a href="" class="btn btn-primary">Editar</a>
                 </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
         <div class="col-md-4">
-            <!-- About Me Box -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Descripción</h3>
+                    <h3>Detalles</h3>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
-                    {{#each micentro}}
-                    <strong><i class="margin-r-5"></i> {{nombrec}}</strong>
-                    <p class="text-muted">{{descripcion}}</p>
-                    {{/each}}
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </div>
-        <div class="col-md-4">
-            <!-- About Me Box -->
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Detalles</h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-
                     <strong><i class="margin-r-5"></i> Servicios</strong>
-                    {{#each srvs}}
-                    <p class="text-muted">{{nombres}}</p>
-                    <p class="text-muted"></p>
-                    {{/each}}
+                    <ul class="tags">
+                        {{#each srvs}}
+                        <li><a href="#" class="tag">{{nombres}}</a></li>
+                        {{/each}}
+                    </ul>
                     <a href="/addServices" class="btn btn-primary">Agregar servicio</a>
                     <hr>
                     <strong><i class="margin-r-5"></i> Deportes</strong>
-                    {{#each dtes}}
-                    <p class="text-muted">{{nombre}}</p>
-                    {{/each}}
+                    <ul class="tags">
+                        {{#each dtes}}
+                        <li><a href="#" class="tag">{{nombre}}</a></li>
+                        {{/each}}
+                    </ul>
                     <a href="" class="btn btn-primary">Agregar deporte</a>
                 </div>
-
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="box box-primary">
-                <div class="box-body">
-                    Aquí van las canchas que pertenecen a este centro deportivo
-                </div>
+    <div class="col-md-4 mx-auto">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3>Canchas</h3>
+            </div>
+            <div class="box-body">
+                Aquí van las canchas que pertenecen a este centro deportivo
             </div>
         </div>
+    </div>
     </div>
 </section>
-<div class="container">
-    <div class="row md-4 mx-auto">
-        <div class="text-center">
-            <p style="font-size: 2em;">No tienes ningún centro creado.</p>
-            <a href="/addCentro" class="btn btn-success btn-block">¡Agrega tu centro!</a>
-        </div>
-    </div>
-</div>
