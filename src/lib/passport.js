@@ -21,7 +21,9 @@ passport.use('local.signup', new LocalStrategy({
         numidentificacion
     };
     newUser.contra = await helpers.encryptPassword(contra);
-    const result = await pool.query('INSERT INTO usuario SET ? ', [newUser]);
+    //const result = await pool.query('CALL RegistrarUsuario(?)', [newUser]);
+    const result = await pool.query('INSERT INTO usuario set ?', [newUser])
+    console.log(result)
     newUser.id = result.insertId;
     return done(null, newUser);
 }));

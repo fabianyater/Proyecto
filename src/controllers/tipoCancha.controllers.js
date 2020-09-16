@@ -37,7 +37,8 @@ tipoCanchaCtrl.editTipoCancha = async(req, res) => {
 
 tipoCanchaCtrl.renderTipoCancha = async(req, res) => {
     const tipoCancha = await pool.query('SELECT * FROM t_cancha');
-    res.render('tipoCancha/listTipoCancha', { tipoCancha });
+    const tc = await pool.query('SELECT tc.nombre from centro c2 inner join cancha c on c2.centro_id = c.fk_centro inner join t_cancha tc on c.fk_tcancha = tc.tcancha_id WHERE fk_usuario = ?', [req.user.id])
+    res.render('tipoCancha/listTipoCancha', { tipoCancha, tc });
 }
 
 tipoCanchaCtrl.deleteTipoCancha = async(req, res) => {

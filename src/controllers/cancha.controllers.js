@@ -2,8 +2,9 @@ const canchaCtrl = {}
 
 const pool = require('../database');
 
-canchaCtrl.renderAddCancha = (req, res) => {
-    res.render('cancha/addCancha');
+canchaCtrl.renderAddCancha = async(req, res) => {
+    const result = await pool.query('select * from t_cancha')
+    res.render('cancha/addCancha', {tipo_cancha: result});
 };
 
 canchaCtrl.addCancha = async (req, res) => {
@@ -28,14 +29,13 @@ canchaCtrl.addCancha = async (req, res) => {
 };
 
 canchaCtrl.renderCancha = async (req, res) => {
-    console.log(req.centro)
-    const canchas = await pool.query('SELECT * FROM cancha ');
-    res.render('cancha/listCancha', { canchas });
+    const canchas = await pool.query('SELECT * FROM cancha inner join horario_cancha on cancha.cancha_id = horario_cancha.cancha_id');
+    res.render('cancha/listCancha', { canchas});
 };
 
-canchaCtrl.rendercanchas = async (req, res) => {
-    const allcanchas = await pool.query('SELECT * FROM mostrar_canchas');
-    res.render('cancha/listcancha', { allcanchas });
-};
+//canchaCtrl.rendercanchas = async (req, res) => {
+    //const allcanchas = await pool.query('SELECT * FROM mostrar_canchas');
+  //  res.render('cancha/listcancha', { allcanchas });
+//};
 
 module.exports = canchaCtrl;

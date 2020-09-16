@@ -10,6 +10,7 @@ userCtrl.renderInicio = (req, res) => {
 userCtrl.renderUserProfile = async (req, res) => {
     const result = await pool.query('SELECT COUNT(*) as Reservas from cant_reservas where id = ?', [req.user.id])
     result.stringify = JSON.stringify(result)
+    console.log(result)
     res.render('profile', { perfil_usuario: result });
 }
 

@@ -1,5 +1,22 @@
-{{#each canchas}}
-<h1>
-{{nombre}}
-</h1>
-{{/each}}
+<div class="container p-4">
+    <div class="row">
+        {{#each canchas}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p class="m-2">{{nombre}}</p>
+                    <p class="m-2">{{precio}}</p>
+
+                </div>
+            </div>
+            <br>
+        </div>
+        {{else}}
+        <div class="row md-4 mx-auto">
+            <div class="text-center">
+                <p style="font-size: 2em;">No hay canchas.</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

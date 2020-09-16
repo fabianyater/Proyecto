@@ -11,10 +11,18 @@
                             <input type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" name="numero" placeholder="Número de cancha" autofocus>
+                            <input type="number" class="form-control" name="numero" placeholder="Número de cancha"
+                                autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" name="fk_tcancha" placeholder="Tipo de cancha" autofocus>
+                            <select class="browser-default custom-select">
+                                <option selected>Tipo de cancha</option>
+                                {{#each tipo_cancha}}
+                                <option value="1" id="tipoCancha" name="fk_tcancha">{{nombre}} </option>
+                                {{/each}}
+                                
+                            </select>
+                            <input type="number" name="fk_tcancha" class=""form-control placeholder="Tipo cancha"
                         </div>
                         <div class="form-group">
                             <input type="number" class="form-control" name="fk_centro" placeholder="Centro" autofocus>
@@ -30,3 +38,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    let combo = document.getElementById("tipoCancha")
+    let selected = combo.options[combo.selectedIndex].text
+    alert(selected)
+    let cod = document.getElementById("tipoCancha").value
+    alert(cod)
+    
+</script>

@@ -1,11 +1,11 @@
 <div class="container p-4">
     <div class="row">
-        {{#each tipoCancha}}
+        {{#each tc}}
         <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
                     <p class="m-2">{{nombre}}</p>
-                     <a href="/deleteTipoCancha/{{tcancha_id}}" class="btn btn-danger">Eliminar</a>
+                    <a href="/deleteTipoCancha/{{tcancha_id}}" class="btn btn-danger">Eliminar</a>
                     <a href="/editTipoCancha/{{tcancha_id}}" class="btn btn-secondary">Editar</a>
                 </div>
             </div>
